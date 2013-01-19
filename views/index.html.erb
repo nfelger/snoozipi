@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <title>o hai dere</title>
   </head>
   <body>
-    Velkom
+    <form class="form-inline">
+      <select name="minute">
+        <% (0..23).to_a.each do |n| %>
+          <option><%= n.to_s.rjust(2, '0') %></option>
+        <% end %>
+      </select>
+      <select name="hour">
+        <% (0..59).to_a.each do |n| %>
+          <option><%= n.to_s.rjust(2, '0') %></option>
+        <% end %>
+      </select>
+      <button type="submit" class="btn">Set alarm</button>
+    </form>
   </body>
 </html>
